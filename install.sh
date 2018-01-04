@@ -155,7 +155,7 @@ if [ ! -d bin ]; then mkdir bin; fi
 if [ -f ./bin/poly_pkt_fwd ]; then rm ./bin/poly_pkt_fwd; fi
 ln -s $INSTALL_DIR/packet_forwarder/poly_pkt_fwd/poly_pkt_fwd ./bin/poly_pkt_fwd
 popd
-cp -f ./global_conf.json ./bin/global_conf.json
+cp -f ./global_conf.json $INSTALL_DIR/bin/global_conf.json
 pushd $INSTALL_DIR
 
 LOCAL_CONFIG_FILE=$INSTALL_DIR/bin/local_conf.json
