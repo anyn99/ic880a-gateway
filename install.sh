@@ -181,9 +181,9 @@ else
 	popd
 	cp -f ./local_conf.json $LOCAL_CONFIG_FILE
 	pushd $INSTALL_DIR
-	sed -i -e 's/"gateway_ID": "",/"gateway_ID": "$GATEWAY_EUI",/g' $LOCAL_CONFIG_FILE
-	sed -i -e 's/"contact_email": "",/"contact_email": "$GATEWAY_EMAIL",/g' $LOCAL_CONFIG_FILE
-	sed -i -e 's/"description": "",/"description": "$GATEWAY_NAME",/g' $LOCAL_CONFIG_FILE
+	sed -i -e 's/"gateway_ID": "",/"gateway_ID": '"$GATEWAY_EUI"',/g' $LOCAL_CONFIG_FILE
+	sed -i -e 's/"contact_email": "",/"contact_email": '"$GATEWAY_EMAIL"',/g' $LOCAL_CONFIG_FILE
+	sed -i -e 's/"description": "",/"description": '"$GATEWAY_NAME"',/g' $LOCAL_CONFIG_FILE
     # echo -e "{\n\t\"gateway_conf\": {\n\t\t\"gateway_ID\": \"$GATEWAY_EUI\",\n\t\t\"servers\": [ { \"server_address\": \"router.eu.thethings.network\", \"serv_port_up\": 1700, \"serv_port_down\": 1700, \"serv_enabled\": true } ],\n\t\t\"ref_latitude\": $GATEWAY_LAT,\n\t\t\"ref_longitude\": $GATEWAY_LON,\n\t\t\"ref_altitude\": $GATEWAY_ALT,\n\t\t\"contact_email\": \"$GATEWAY_EMAIL\",\n\t\t\"description\": \"$GATEWAY_NAME\" \n\t}\n}" >$LOCAL_CONFIG_FILE
 fi
 
