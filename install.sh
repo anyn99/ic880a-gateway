@@ -104,6 +104,20 @@ if [ -d wiringPi ]; then
     rm -rf wiringPi
 fi 
 
+# get bcm2835 driver 
+if [ ! -d bcm2835 ]; then
+    mkdir bcm2835
+	pushd bcm2835
+	wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.52.tar.gz
+	tar zxvf bcm2835-1.52.tar.gz
+	cd bcm2835-1.52
+	./configure
+	make
+	sudo make check
+	sudo make install
+	popd
+fi
+
 # Build LoRa gateway app
 if [ ! -d lora_gateway ]; then
     git clone -b master https://github.com/anyn99/lora_gateway.git
