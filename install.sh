@@ -154,7 +154,9 @@ popd
 if [ ! -d bin ]; then mkdir bin; fi
 if [ -f ./bin/poly_pkt_fwd ]; then rm ./bin/poly_pkt_fwd; fi
 ln -s $INSTALL_DIR/packet_forwarder/poly_pkt_fwd/poly_pkt_fwd ./bin/poly_pkt_fwd
+popd
 cp -f ./global_conf.json ./bin/global_conf.json
+pushd $INSTALL_DIR
 
 LOCAL_CONFIG_FILE=$INSTALL_DIR/bin/local_conf.json
 
@@ -176,7 +178,9 @@ if [ "$REMOTE_CONFIG" = true ] ; then
 
     popd
 else
+	popd
 	cp -f ./local_conf.json $LOCAL_CONFIG_FILE
+	pushd $INSTALL_DIR
 	sed -i -e 's/"gateway_ID": "",/"gateway_ID": "$GATEWAY_EUI",/g' $LOCAL_CONFIG_FILE
 	sed -i -e 's/"contact_email": "",/"contact_email": "$GATEWAY_EMAIL",/g' $LOCAL_CONFIG_FILE
 	sed -i -e 's/"description": "",/"description": "$GATEWAY_NAME",/g' $LOCAL_CONFIG_FILE
