@@ -1,7 +1,8 @@
 {
 /* Put there parameters that are different for each gateway (eg. pointing one gateway to a test server while the others stay in production) */
 /* Settings defined in global_conf will be overwritten by those in local_conf */
-    "gateway_conf": {
+    "gateway_conf": 
+	{
         /* you must pick a unique 64b number for each gateway (represented by an hex string) */
         "gateway_ID": "",
         /* Email of gateway operator, max 40 chars*/
@@ -17,7 +18,7 @@
 		/* "pin_pps": 0,       	  GPIO5 Pin where PPS signal is connected to (if any, mainly linklabs board) */       
 		
     /* Enter VALID GPS coordinates below before enabling fake GPS */
-		"gps_tty_path": "/dev/ttyAMA0",
+		"gps_tty_path": "/dev/ttyS0",
         "fake_gps": false,
         "ref_latitude": 10,
         "ref_longitude": 20,
