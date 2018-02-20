@@ -17,6 +17,7 @@
 		/* "pin_pps": 0,       	  GPIO5 Pin where PPS signal is connected to (if any, mainly linklabs board) */       
 		
     /* Enter VALID GPS coordinates below before enabling fake GPS */
+		"gps_tty_path": "/dev/ttyAMA0",
         "fake_gps": false,
         "ref_latitude": 10,
         "ref_longitude": 20,
