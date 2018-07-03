@@ -9,6 +9,7 @@
 
         $ sudo raspi-config
 
+    - expand sd card partition
     - **Enable SPI** (`5 Interfacing Options -> P4 SPI`)
     - **Enable SSH** (`5 Interfacing Options -> P2 SSH`)
     - Set hostname (`2 Network Options -> N1 Hostname`)
