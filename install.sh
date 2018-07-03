@@ -56,16 +56,17 @@ if [[ $response =~ ^(yes|y) ]]; then
     NEW_HOSTNAME="ttn-gateway"
     REMOTE_CONFIG=true
 else
-    printf "       Host name [ttn-gateway]:"
+    printf "       Host name [pi-ttn-gateway-modasXX]:"
     read NEW_HOSTNAME
-    if [[ $NEW_HOSTNAME == "" ]]; then NEW_HOSTNAME="ttn-gateway"; fi
+    if [[ $NEW_HOSTNAME == "" ]]; then NEW_HOSTNAME="pi-ttn-gateway-modasXX"; fi
 
-    printf "       Descriptive name [ttn-ic880a]:"
+    printf "       Descriptive name [ttn-rak831]:"
     read GATEWAY_NAME
-    if [[ $GATEWAY_NAME == "" ]]; then GATEWAY_NAME="ttn-ic880a"; fi
+    if [[ $GATEWAY_NAME == "" ]]; then GATEWAY_NAME="ttn-rak831"; fi
 
-    printf "       Contact email: "
+    printf "       Contact email [mail@modas.de]: "
     read GATEWAY_EMAIL
+    if [[ $GATEWAY_EMAIL == "" ]]; then GATEWAY_EMAIL="mail@modas.de"; fi
 
     printf "       Latitude [0]: "
     read GATEWAY_LAT
